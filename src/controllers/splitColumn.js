@@ -6,6 +6,7 @@ import editor from '../global/editor';
 import { setcellvalue } from '../global/setdata';
 import { getcellvalue } from '../global/getdata';
 import { jfrefreshgrid } from '../global/refresh';
+import formula from '../global/formula';
 import Store from '../store';
 import locale from '../locale/locale';
 
@@ -160,7 +161,7 @@ const luckysheetSplitColumn = {
             let tdHtml = '';
 
             for(let j = 0; j < dataArr[0].length; j++){
-                tdHtml += '<td>' + dataArr[i][j] + '</td>';
+                tdHtml += '<td>' + formula.xssDeal(dataArr[i][j]) + '</td>';
             }
 
             trHtml += '<tr>' + tdHtml + '</tr>';
